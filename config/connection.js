@@ -1,7 +1,6 @@
 const mysql = require("mysql2");
 require("dotenv").config();
 
-// Setting up our connection information
 let connection;
 
 if (process.env.JAWSDB_URL) {
@@ -16,7 +15,6 @@ if (process.env.JAWSDB_URL) {
     })
 }
 
-// Connecting to the database.
 connection.connect(err => {
     if (err) {
         console.error("error connecting: " + err.stack);
@@ -25,5 +23,4 @@ connection.connect(err => {
     console.log("connected as id " + connection.threadId);
 });
 
-// Export connection .
 module.exports = connection;
